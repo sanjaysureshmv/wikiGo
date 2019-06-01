@@ -13,8 +13,9 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    repo: foo/bar
+    repo: sanjaymv/wikiapp
     username:
-      from_secret: docker_username
+      from_secret: docker_user
     password:
       from_secret: docker_password
+  tags: ${DRONE_COMMIT_SHA}
