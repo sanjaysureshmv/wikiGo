@@ -5,4 +5,4 @@ COPY . /app
 RUN go get github.com/SimonWaldherr/micromarkdownGo
 RUN	go get github.com/mxk/go-sqlite/sqlite3
 RUN	go build
-ENTRYPOINT ["./go"]
+ENTRYPOINT ["./wikiGo"]
