@@ -1,0 +1,20 @@
+kind: pipeline
+name: test-pipeline-goapp
+
+steps:
+
+- name: build
+  image: goalang:1.7
+  commands: 
+    - go get github.com/SimonWaldherr/micromarkdownGo
+    - go get github.com/mxk/go-sqlite/sqlite3
+    - go build -o wikiapp
+    
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: foo/bar
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
