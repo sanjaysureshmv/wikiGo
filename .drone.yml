@@ -9,6 +9,13 @@ steps:
     - go get github.com/SimonWaldherr/micromarkdownGo
     - go get github.com/mxk/go-sqlite/sqlite3
     - go build -o wikiapp
+    - ./wikiapp
+    - rm -f wikiapp
+  when:
+    branch:
+      - master
+    event:
+      - push
 
 - name: docker  
   image: plugins/docker
@@ -18,4 +25,4 @@ steps:
       from_secret: docker_user
     password:
       from_secret: docker_password
-  tags: ${DRONE_COMMIT_SHA}
+
