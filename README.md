@@ -18,3 +18,5 @@ make
 ## idea
 
 [based on the idea of golang.org/doc/articles/wiki/](http://golang.org/doc/articles/wiki/)
+
+Drone pipeline for wikiGo
